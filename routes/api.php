@@ -28,3 +28,7 @@ Route::get('/create/{value}',function($value){
     );
     return 'created';
 });
+
+Route::get('/test',function(){
+   getenv(RDS_DB_NAME); 
+});
