@@ -18,8 +18,13 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::get('/',function() {
-    return 'response';
+    $users = DB::table('users')->get();
+    return response()->json($users);
 });
+
 Route::get('/create/{value}',function($value){
+    DB::table('users')->insert(
+        ['name' => $value]
+    );
     return 'created';
 });
