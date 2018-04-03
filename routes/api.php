@@ -23,6 +23,7 @@ Route::get('/',function() {
 });
 
 Route::get('/create/{value}',function($value){
+    //
     DB::table('users')->insert(
         ['name' => $value]
     );
